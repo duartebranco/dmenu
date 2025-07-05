@@ -1,4 +1,4 @@
-# duartebranco's dmenu
+# duarte’s dmenu build
 
 This is my personal build of dmenu with several patches and customizations applied.
 
