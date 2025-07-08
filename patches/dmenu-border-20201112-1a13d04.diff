@@ -1,5 +1,28 @@
---- dmenu.c
-+++ dmenu.c
+From d0c3fc8a634c153856cd41438f705175a21ec69a Mon Sep 17 00:00:00 2001
+From: braskin <benjaminiraskin@gmail.com>
+Date: Thu, 12 Nov 2020 10:13:29 -0500
+Subject: [PATCH] fixed border width draw for topbar
+
+---
+ config.def.h | 3 +++
+ dmenu.c      | 6 +++++-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/config.def.h b/config.def.h
+index 1edb647..dd3eb31 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -21,3 +21,6 @@ static unsigned int lines      = 0;
+  * for example: " /?\"&[]"
+  */
+ static const char worddelimiters[] = " ";
++
++/* Size of the window border */
++static unsigned int border_width = 0;
+diff --git a/dmenu.c b/dmenu.c
+index 65f25ce..716e655 100644
+--- a/dmenu.c
++++ b/dmenu.c
 @@ -659,9 +659,11 @@ setup(void)
  	swa.override_redirect = True;
  	swa.background_pixel = scheme[SchemeNorm][ColBg].pixel;
@@ -22,3 +45,6 @@
  		else
  			usage();
  
+-- 
+2.25.1
+
